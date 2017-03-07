@@ -1,3 +1,7 @@
+package galgeleg;
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,7 +18,7 @@ import javax.jws.WebService;
  * @author IamHexor
  */
 @WebService
-interface GalgelegI {
+public interface GalgelegI {
   @WebMethod  public ArrayList<String> getBrugteBogstaver();
    @WebMethod public String getSynligtOrd();
    @WebMethod public String getOrdet();

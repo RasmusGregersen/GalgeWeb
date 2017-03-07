@@ -1,12 +1,27 @@
+<%@page import="java.net.MalformedURLException"%>
+<%@page import="java.net.URL"%>
+<%@page import="java.rmi.Naming"%>
+<%@page import="java.rmi.NotBoundException"%>
+<%@page import="java.rmi.RemoteException"%>
+<%@page import="javax.xml.namespace.QName"%>
+<%@page import="javax.xml.ws.Service"%>
+
 <html>
 <head><title>login2</title></head>
 <body>
 <%
+    
+URL url = new URL("http://localhost:18371/galgeservice?wsdl");
+QName qname = new QName("http://galgeleg/", "GalgelogikService");
+Service service = Service.create(url, qname);
+GalgelegI g = service.getPort(GalgelegI.class);
+    
+String name = request.getParameter("brugernavn");
+String pass = request.getParameter("adgangskode");
+
 // hvis brugernavn="Jacob" og adgangskode="hemli" logges der ind.
 // dette burde selvfølgelig hentes fra en database eller lign.
-if ("Jacob".equals(request.getParameter("brugernavn")) &&
- "hemli".equals(request.getParameter("adgangskode")))
-{
+if (g.login(name,pass)) {
 // sæt attributten "logget ind" i sessionen
 session.setAttribute("logget ind", "ja");
 out.println("Du er logget korrekt ind.");

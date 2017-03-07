@@ -7,8 +7,6 @@ Brugernavn:<input type="text" name="brugernavn" /><br />
 Adgangskode:<input type="password" name="adgangskode" /><br />
 <input type="submit" value="Log ind" />
 </form>
-<p>
-Vink: Brugernavnet er "Jacob" og adgangskoden er "hemli".
 </body>
 </html>
 

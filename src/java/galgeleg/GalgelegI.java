@@ -32,6 +32,9 @@ public interface GalgelegI {
    @WebMethod public void opdaterSynligtOrd();
    @WebMethod public void gætBogstav(String bogstav);
    @WebMethod boolean login(String bruger, String adgangskode) throws Exception;
-    
+   @WebMethod public void addLostGame();
+   @WebMethod public void addWonGame();
+   @WebMethod public int getLostGames();
+   @WebMethod public int getWonGames();
            
 }

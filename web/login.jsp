@@ -22,6 +22,8 @@ GalgelegI g = service.getPort(GalgelegI.class);
 if (g.login(request.getParameter("brugernavn"),request.getParameter("adgangskode"))) {
 // sæt attributten "logget ind" i sessionen
 session.setAttribute("logget ind", "ja");
+session.setAttribute("vundneSpil", g.getWonGames());
+session.setAttribute("tabteSpil", g.getLostGames());
 out.println("Du er logget korrekt ind.");
 response.sendRedirect("highscore.jsp");
 }

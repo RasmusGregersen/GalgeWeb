@@ -10,5 +10,7 @@ response.sendRedirect("index.jsp");
 <body>
 <h1>Den beskyttede side</h1>
 Denne tekst kan du kun se, hvis du er logget korrekt på.
+${sessionScope.vundneSpil}
+${sessionScope.tabteSpil}
 </body>
 </html>

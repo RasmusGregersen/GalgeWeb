@@ -8,7 +8,7 @@
 <%@page import="galgeleg.GalgelegI"%>
 
 <html>
-<head><title>login2</title></head>
+<head><title>Redirection</title></head>
 <body>
 <% 
 URL url = new URL("http://localhost:18371/galgeservice?wsdl");
@@ -23,7 +23,7 @@ if (g.login(request.getParameter("brugernavn"),request.getParameter("adgangskode
 session.setAttribute("logget ind", "ja");
 session.setAttribute("brugernavn", request.getParameter("brugernavn"));
 out.println("Du er logget korrekt ind.");
-response.sendRedirect("highscore.jsp");
+request.getRequestDispatcher("highscore.jsp").forward(request, response);
 }
 else
 {

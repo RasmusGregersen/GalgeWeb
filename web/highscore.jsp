@@ -15,7 +15,7 @@ response.sendRedirect("index.jsp");
 }
 %>
 <html>
-<head><title>login3</title>
+<head><title>Statistik</title>
   <link rel="stylesheet" type="text/css" href="styles.css"
 </head>
 <body>

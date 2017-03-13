@@ -22,13 +22,13 @@ response.sendRedirect("index.jsp");
 <p1>Her ses en specifik spillers historik</p1>
 
 <%
-URL url = new URL("http://localhost:18371/galgeservice?wsdl");
+URL url = new URL("http://ubuntu4.javabog.dk:18371/galgeservice?wsdl");
 QName qname = new QName("http://galgeleg/", "GalgelogikService");
 Service service = Service.create(url, qname);
 GalgelegI g = service.getPort(GalgelegI.class);
 
-session.setAttribute("vundneSpil", g.getWonGames());
-session.setAttribute("tabteSpil", g.getLostGames());
+session.setAttribute("vundneSpil", g.getWonGames((String)session.getAttribute("brugernavn"),(String)session.getAttribute("adgangskode")));
+session.setAttribute("tabteSpil", g.getLostGames((String)session.getAttribute("brugernavn"),(String)session.getAttribute("adgangskode")));
 %>
 <table>
   <tr>

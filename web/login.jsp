@@ -11,7 +11,7 @@
 <head><title>Redirection</title></head>
 <body>
 <% 
-URL url = new URL("http://localhost:18371/galgeservice?wsdl");
+URL url = new URL("http://ubuntu4.javabog.dk:18371/galgeservice?wsdl");
 QName qname = new QName("http://galgeleg/", "GalgelogikService");
 Service service = Service.create(url, qname);
 GalgelegI g = service.getPort(GalgelegI.class);
@@ -22,6 +22,7 @@ if (g.login(request.getParameter("brugernavn"),request.getParameter("adgangskode
 // sæt attributten "logget ind" i sessionen
 session.setAttribute("logget ind", "ja");
 session.setAttribute("brugernavn", request.getParameter("brugernavn"));
+session.setAttribute("adgangskode", request.getParameter("adgangskode"));
 out.println("Du er logget korrekt ind.");
 request.getRequestDispatcher("highscore.jsp").forward(request, response);
 }

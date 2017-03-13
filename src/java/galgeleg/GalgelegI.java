@@ -19,22 +19,22 @@ import javax.jws.WebService;
  */
 @WebService
 public interface GalgelegI {
-  @WebMethod  public ArrayList<String> getBrugteBogstaver();
-   @WebMethod public String getSynligtOrd();
-   @WebMethod public String getOrdet();
-   @WebMethod public String logStatus();
-   @WebMethod public int getAntalForkerteBogstaver();
-   @WebMethod boolean erSidsteBogstavKorrekt();
-   @WebMethod public boolean erSpilletVundet();
-   @WebMethod public boolean erSpilletTabt();
-   @WebMethod public boolean erSpilletSlut();
-   @WebMethod public void nulstil();
-   @WebMethod public void opdaterSynligtOrd();
-   @WebMethod public void gætBogstav(String bogstav);
+   @WebMethod  public String getBrugteBogstaver(String bruger, String adgangskode);
+   @WebMethod public String getSynligtOrd(String bruger, String adgangskode);
+   @WebMethod public String getOrdet(String bruger, String adgangskode);
+   @WebMethod public String logStatus(String bruger, String adgangskode);
+   @WebMethod public int getAntalForkerteBogstaver(String bruger, String adgangskode);
+   @WebMethod public boolean erSpilletVundet(String bruger, String adgangskode);
+   @WebMethod public boolean erSpilletTabt(String bruger, String adgangskode);
+   @WebMethod public boolean erSpilletSlut(String bruger, String adgangskode);
+   @WebMethod public void nulstil(String bruger, String adgangskode);
+   @WebMethod public void opdaterSynligtOrd(String bruger, String adgangskode);
+   @WebMethod public void gætBogstav(String bogstav, String bruger, String adgangskode);
    @WebMethod boolean login(String bruger, String adgangskode) throws Exception;
-   @WebMethod public void addLostGame();
-   @WebMethod public void addWonGame();
-   @WebMethod public int getLostGames();
-   @WebMethod public int getWonGames();
+   @WebMethod public void startSpil(String brugernavn, String adgangskode); 
+   @WebMethod public void addLostGame(String bruger, String adgangskode);
+   @WebMethod public void addWonGame(String bruger, String adgangskode);
+   @WebMethod public int getLostGames(String bruger, String adgangskode);
+   @WebMethod public int getWonGames(String bruger, String adgangskode);
            
 }
